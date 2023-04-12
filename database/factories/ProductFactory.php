@@ -20,7 +20,9 @@ class ProductFactory extends Factory
             'nama' => fake()->unique()->words(mt_rand(1,3), true),
             'company' => fake()->company(),
             'stok' => fake()->numberBetween(1, 500),
-            'harga' => fake()->numberBetween(1000, 600000)
+            'harga' => fake()->numberBetween(1000, 600000),
+            'deskripsi' => fake()->text(mt_rand(250, 350)),
+            'link_gambar' => fake()->imageUrl(300, 400, 'product', true)
         ];
     }
 }

@@ -10,7 +10,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          <a href="#" class="d-block">Hello, {{ Auth::user()->username }}</a>
         </div>
       </div>
 
@@ -20,7 +20,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link {{ ($content === "Dashboard") ? 'active' : '' }}">
+            <a href="/" class="nav-link {{ ($content === "Dashboard") ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -32,33 +32,6 @@
               <i class="nav-icon fas fa-list"></i>
               <p>
                 List Produk
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/pengalaman-kuliah" class="nav-link {{ ($content === "Members") ? 'active' : '' }}">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                List Member
-            
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/artikel" class="nav-link {{ ($content === "Transactions") ? 'active' : '' }}">
-                <i class="nav-icon fas fa-money-bill"></i>
-              <p>
-                Transaksi
-            
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/hobi" class="nav-link {{ ($content === "Employees") ? 'active' : '' }}">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                List Pegawai
-            
               </p>
             </a>
           </li>

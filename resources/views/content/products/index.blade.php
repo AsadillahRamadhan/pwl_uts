@@ -30,9 +30,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($products as $product)
+                    @foreach($products as $i => $product)
                 <tr class="text-center">
-                  <td>{{ $product->id }}</td>
+                  <td>{{ ++$i }}</td>
                   <td>{{ $product->nama }}</td>
                   <td>{{ $product->company }}</td>
                   <td>{{ $product->stok }}</td>
@@ -40,10 +40,10 @@
                   <td class="d-flex justify-content-center">
                     <form method="POST" action="{{ url('/products/'.$product->id) }}" >
                   @csrf
-                  <a href="{{ url('/products/'. $product->id.'/edit') }}" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
+                  <a href="{{ url('/products/'. $product->id) }}" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
                   <a href="{{ url('/products/'. $product->id.'/edit') }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                   @method('DELETE')
-                  <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                  <button type="submit" class="btn btn-sm btn-danger delete"><i class="fa-solid fa-trash"></i></button>
                 </form>
                   </td>
                 </tr>
@@ -67,6 +67,4 @@
   </section>
   <!-- /.content -->
 </div>
-
-
 @endsection

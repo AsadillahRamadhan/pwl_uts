@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('logout', [LoginController::class, 'logout']);
 Route::middleware(['auth'])->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/', function () { return view('content.dashboard.index', [ 'content' => 'Dashboard']); });
+    Route::get('/', function () { return view('content.dashboard.index', [ 'content' => 'Dashboard', 'title' => 'Dashboard']); });
     Route::resource('/products', ProductController::class);
+    Route::get('/products{products:id}', [ProductController::class, 'show']);
 });
