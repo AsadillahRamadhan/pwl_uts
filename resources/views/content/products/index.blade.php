@@ -38,12 +38,12 @@
                   <td>{{ $product->stok }}</td>
                   <td>{{ "Rp " . number_format($product->harga,2,',','.'); }}</td>
                   <td class="d-flex justify-content-center">
-                    <form method="POST" action="{{ url('/products/'.$product->id) }}" >
+                    <form method="POST" action="{{ url('/products/'.$product->id) }}" id="form">
                   @csrf
                   <a href="{{ url('/products/'. $product->id) }}" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
                   <a href="{{ url('/products/'. $product->id.'/edit') }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                   @method('DELETE')
-                  <button type="submit" class="btn btn-sm btn-danger delete"><i class="fa-solid fa-trash"></i></button>
+                  <button type="submit" class="btn btn-sm btn-danger delete" onclick="konfirmasiForm()"><i class="fa-solid fa-trash"></i></button>
                 </form>
                   </td>
                 </tr>
@@ -68,3 +68,22 @@
   <!-- /.content -->
 </div>
 @endsection
+@push('custom_js')
+<script>
+function konfirmasiForm() {
+  event.preventDefault();
+  Swal.fire({
+    title: 'Apakah Anda yakin?',
+    text: 'Data akan dihapus. Apakah Anda ingin melanjutkan?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Ya, kirimkan!',
+    cancelButtonText: 'Batal'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      document.getElementById('form').submit(); 
+    }
+  });
+}
+</script>
+@endpush

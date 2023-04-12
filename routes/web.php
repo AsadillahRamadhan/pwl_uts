@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MovieModelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,5 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/', function () { return view('content.dashboard.index', [ 'content' => 'Dashboard', 'title' => 'Dashboard']); });
     Route::resource('/products', ProductController::class);
     Route::get('/products{products:id}', [ProductController::class, 'show']);
+    Route::resource('/movie', MovieModelController::class);
 });
