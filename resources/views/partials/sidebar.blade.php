@@ -35,6 +35,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/movie" class="nav-link {{ ($content === "Movies") ? 'active' : '' }}">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                List Movie
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
