@@ -1,13 +1,29 @@
 @extends('layouts.main')
 @section('content')
 <div class="card mx-2">
-    <div class="card-header">
-      Featured
-    </div>
     <div class="card-body">
-      <h5 class="card-title">Hello, {{ Auth::user()->name }}</h5>
-      <p class="card-text">Mulai tur dengan menuju data produk.</p>
-      <a href="/products" class="btn btn-primary">Mulai Tur</a>
+      <div class="row justify-content-center d-flex">
+        <div class="col-md-6">
+          <img src="{{ url('/img/aqil.png') }}" alt="" class="img">
+          <h5>Nama: Muhammad Aqilul Muttaqin</h5>
+          <h5>NIM: 2141720182</h5>
+        </div>
+        <div class="col-md-6 justify-content-center">
+          <img src="{{ url('/img/rama.png') }}" alt="" class="img text-center"> 
+          <h5>Nama: Muhammad Asadillah Ramadhan</h5>
+          <h5>NIM: 2141720093</h5>
+        </div>
+      </div>
     </div>
   </div>
 @endsection
+@push('custom_css')
+<style>
+  .img {
+  width: 100px;
+  height: 150px;
+  overflow: scroll;
+  justify-items: center;
+}
+</style>
+@endpush
